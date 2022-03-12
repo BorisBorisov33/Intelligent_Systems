@@ -20,10 +20,7 @@ class MyApp:
         self.frame.pack(expand=YES)
 
     def create_widgets(self):
-        self.create_title()
-        self.create_subtitle()
         self.create_grid()
-        self.create_youtube_button()
 
     def create_grid(self):
         # entries
@@ -63,22 +60,6 @@ class MyApp:
         lbl_steps.grid(row=5, column=0, sticky="w")
 
         button.grid(row=6, column=0, columnspan=2)
-
-    def create_title(self):
-        label_title = Label(self.frame, text="Welcome", font=("Helvetica", 40), bg='#e28743',
-                            fg='white')
-        # label_title.pack()
-
-    def create_subtitle(self):
-        label_subtitle = Label(self.frame, text="Hey guys", font=("Helvetica", 25), bg='#e28743',
-                               fg='white')
-        # label_subtitle.pack()
-
-    def create_youtube_button(self):
-        yt_button = Button(self.frame, text="Run", font=("Helvetica", 25), bg='white', fg='#e28743',
-                           # command=
-                           )
-        # yt_button.pack(pady=25, fill=X)
 
 # afficher
 app = MyApp()
