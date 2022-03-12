@@ -39,9 +39,6 @@ class MyApp:
         lbl_wake_up = tk.Label(master=self.frame, text="end of sleep")
         lbl_steps = tk.Label(master=self.frame, text="number of steps")
 
-        # button
-        btn_enter = tk.Button(master=self.frame, text="Enter")
-
         # grid of the frame
         self.frame.grid(row=0, column=0, padx=10,pady=10)
 
