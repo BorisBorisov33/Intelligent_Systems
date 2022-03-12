@@ -39,7 +39,7 @@ class MyApp:
         lbl_steps = tk.Label(master=self.frame, text="number of steps", font=("Helvetica", 25), bg='#e28743', fg='white')
 
         # button
-        button = Button(self.frame, text="Get my Sleep Score!", font=("Helvetica", 25), bg='white', fg='#e28743', command=lambda: self.increase())
+        button = Button(self.frame, text="Get my Sleep Score!", font=("Helvetica", 25), bg='white', fg='#e28743', command= self.increase)
 
         # grid of the frame
         self.frame.grid(row=0, column=0, padx=10)
