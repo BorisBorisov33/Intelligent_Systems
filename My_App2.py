@@ -166,28 +166,35 @@ class MyApp:
         sorted = object.runGA()
         top_val = list(sorted)[0]
 
-        lbl_sleep = tk.Label(master=self.frame, text="We recommend you the following:", font=("Helvetica", 25),
+        lbl_sleep = tk.Label(master=self.frame, text="We recommend you the following: ", font=("Helvetica", 25),
                              bg='#140096',
                              fg='white')
         lbl_sleep.grid(row=1, column=0)
-        lbl_sleeptime = tk.Label(master=self.frame, text="Sleep time" + str(int(top_val[0] / 3600)),
+        lbl_sleeptime = tk.Label(master=self.frame, text="Sleep time: " + str(int(top_val[0] / 3600)) + " hours",
                                  font=("Helvetica", 25), bg='#140096',
                                  fg='white')
-        lbl_steps = tk.Label(master=self.frame, text="Sleep time" + str(top_val[3]), font=("Helvetica", 25),
+        lbl_sleeptime.grid(row=2, column=0)
+
+        lbl_steps = tk.Label(master=self.frame, text="Steps: " + str(top_val[3]), font=("Helvetica", 25),
                              bg='#140096',
                              fg='white')
-        if (top_val[4] == 1):
+        lbl_steps.grid(row=3, column=0)
+
+        if top_val[4] == 1:
             lbl_caffenated = tk.Label(master=self.frame,
-                                      text="We recommend you to have 2 caffenated drinks at most and work out.",
+                                      text="We recommend you to have 2 caffeinated drinks at most and work out.",
                                       font=("Helvetica", 25),
                                       bg='#140096',
                                       fg='white')
         else:
             lbl_caffenated = tk.Label(master=self.frame,
-                                      text="We do not recommend you to have any caffenated drinks or work out.",
+                                      text="We do not recommend you to have any caffeinated drinks or work out.",
                                       font=("Helvetica", 25),
                                       bg='#140096',
                                       fg='white')
+        lbl_caffenated.grid(row=4, column=0)
+
+
 
     def recommended_time_sleep(self, age):
         if 1 < age <= 2:
