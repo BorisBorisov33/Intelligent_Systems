@@ -136,16 +136,11 @@ class MyApp:
         lbl_previous_night_sleep_score = tk.Label(master=self.frame, text="Previous night sleep score: ",
                                                   font=("Helvetica", 25), bg='#140096', fg='white')
         self.sleep_score = tk.Entry(master=self.frame, fg="white", bg="#140096", width=20, font=('Helvetica', 15))
+
         # global sleepScore_int
-        sleepScore = self.sleep_score.get()
         # sleepScore_int = int(float(sleepScore))
         btn_recommend = Button(self.frame, text="Get Recommendation", font=("Helvetica", 25), bg='white', fg='#140096',
                                command=self.ga)
-        # lbl_sleep_score = tk.Label(master=self.frame, text="Your sleep score:", font=("Helvetica", 25), bg='#140096', fg='white')
-        # lbl_time_bed = tk.Label(master=self.frame, text="You need at least that time in bed:", font=("Helvetica", 25), bg='#140096', fg='white')
-
-        # lbl_sleep_score_ans = tk.Label(master=self.frame, text=sleep_score, font=("Helvetica", 25, "bold"), bg='#140096', fg='white')
-        # lbl_sleep_time = tk.Label(master=self.frame, text=recommended_sleep, font=("Helvetica", 25, "bold"), bg='#140096', fg='white')
 
         # positionisn for second frames
         empty_text.grid(row=1, column=0, columnspan=2)
@@ -159,10 +154,15 @@ class MyApp:
         lbl_text_title.grid(row=0, column=0, columnspan=2)
 
     def ga(self):
+
+        sleep_score_value = self.sleep_score.get()
+        # print('value :', self.sleep_score)
+        print('to int :', type(sleep_score_value))
+
         for widget in self.frame.winfo_children():
             widget.destroy()
 
-        object = GA_lifestyle.GA(3, 100, 0.05, self.recommend(int(sleep_Score_int)))
+        object = GA_lifestyle.GA(3, 100, 0.05, int(sleep_score_value))
         sorted = object.runGA()
         top_val = list(sorted)[0]
 
