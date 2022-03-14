@@ -136,9 +136,9 @@ class MyApp:
         lbl_previous_night_sleep_score = tk.Label(master=self.frame, text="Previous night sleep score: ",
                                                   font=("Helvetica", 25), bg='#140096', fg='white')
         self.sleep_score = tk.Entry(master=self.frame, fg="white", bg="#140096", width=20, font=('Helvetica', 15))
-        global sleepScore_int
+        # global sleepScore_int
         sleepScore = self.sleep_score.get()
-        sleepScore_int= int(float(sleepScore))
+        # sleepScore_int = int(float(sleepScore))
         btn_recommend = Button(self.frame, text="Get Recommendation", font=("Helvetica", 25), bg='white', fg='#140096',
                                command=self.ga)
         # lbl_sleep_score = tk.Label(master=self.frame, text="Your sleep score:", font=("Helvetica", 25), bg='#140096', fg='white')
@@ -162,7 +162,7 @@ class MyApp:
         for widget in self.frame.winfo_children():
             widget.destroy()
 
-        object = GA_lifestyle.GA(3, 100, 0.05, sleepScore_int)
+        object = GA_lifestyle.GA(3, 100, 0.05, self.recommend(int(sleep_Score_int)))
         sorted = object.runGA()
         top_val = list(sorted)[0]
 
