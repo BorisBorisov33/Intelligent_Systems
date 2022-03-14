@@ -4,7 +4,7 @@ from turtle import shape
 import joblib
 import numpy as np
 import datetime
-
+import GA_lifestyle
 class MyApp:
 
     def __init__(self):
