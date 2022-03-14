@@ -78,7 +78,7 @@ class GA:
             child_val = []
 
         child_fit = self.fitness(child)
-        new_pop = selected | child_fit
+        new_pop = {**selected ,** child_fit}
 
         return new_pop
 
